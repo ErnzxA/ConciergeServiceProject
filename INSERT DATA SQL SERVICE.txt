@@ -1,0 +1,48 @@
+INSERT INTO service
+VALUES (1, 'Отели', 'hotel_icon.png', 'hotel.jpg'),
+       (2, 'Авиационный транспорт', 'plane_icon.png', 'plane.jpg'),
+       (3, 'Автотранспорт', 'car_icon.png', 'car.jpg'),
+       (4, 'Яхты', 'yacht_icon.png', 'yacht.jpg');
+
+INSERT INTO post
+VALUES (1, 'user'),
+       (2, 'director'),
+       (3, 'moderator');
+
+INSERT INTO service_category
+VALUES (1, 'Premium-class', 3),
+       (2, 'Внедорожники', 3);
+
+INSERT INTO partners
+VALUES (1, 'Mercedes-AMG E63 S', 'Astana', '50000', 'Модельный год: 2021. Стоимость: 50 000 тг/ час', 'Mercedes-AMG E63 S.jpg', 'mercedes.png',1),
+       (2, 'BMW M4 Coupe', 'Astana', '45000', 'Модельный год: 2020. Стоимость: 45 000 тг/ час', 'BMW M4 Coupe.jpg', 'bmw.png', 1),
+       (3, 'Mercedes AMG G63', 'Almaty', '80000', 'Модельный год: 2019. Стоимость:  80 000 тг/ час', 'Mercedes AMG G63.jpg', 'mercedes.png',1),
+       (4, 'BMW M5', 'Astana', '60000', 'Модельный год: 2020. Стоимость: 60 000 тг/ час', 'BMW M5.jpg', 'bmw.png', 1),
+       (5, 'Mercedes-maybach G 650', 'Almaty', '80 000', 'Модельный год: 2019. Стоимость: 80 000 тг/ час', 'Mercedes-maybach G 650.jpg', 'mercedes.png', 2),
+       (6, 'Toyota Land Cruiser 300', 'Astana', '100 000', 'Модельный год: 2022. Стоимость: 100 000 тг/ час', 'Toyota Land Cruiser 300.jpg', 'toyota.png', 2),
+       (7, 'Toyota Tundra TRD Pro', 'Almaty', '90 000', 'Модельный год: 2019. Стоимость: 90 000 тг/ час', 'Toyota Tundra TRD Pro 2019.jpg', 'toyota.png', 2)
+
+
+
+INSERT INTO user_post
+VALUES (1, 1);
+
+SELECT * FROM user;
+SELECT * FROM post;
+SELECT * FROM user_post;
+
+DELETE FROM user WHERE user_id > 1
+DELETE FROM user_post WHERE user_id > 1
+
+
+service_id = db.Column(db.Integer, primary_key=True)
+    # registration and services page
+    service_title = db.Column(db.String(150))
+    service_reg_icon_src = db.Column(db.String(150))
+    service_view_img_src = db.Column(db.String(150))
+
+    # service page
+    service_bg_img_src = db.Column(db.String(150))
+    service_bg_title = db.Column(db.String(150))
+    service_bg_description = db.Column(db.String(150))
+    # category = object to category class

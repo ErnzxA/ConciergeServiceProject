@@ -1,0 +1,175 @@
+{% extends "base.html" %}
+{% block title %}Profile{% endblock %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/service.css') }}">
+
+{% endblock %}
+
+{% block content %}
+
+    <main>
+        <!--
+        <section class="home" id="home" style="background: url({{ url_for('static', filename='files/service_image/shutterstock_1456622.jpg') }}) no-repeat;
+">
+
+            <div class="content">
+                <h3>Арендуйте <span>машину</span> на свой выбор</h3>
+                <p>Произведите впечатление на деловую элиту - арендуйте авто бизнес класса</p>
+                <a href="#product-item" class="rent_btn">Арендовать сейчас</a>
+            </div>
+
+        </section>
+
+        -->
+
+
+        <div class="main-banner"
+             style="background: url({{ url_for('static', filename='files/service_image/{}'.format(service.bg_img)) }}) no-repeat">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="top-text header-text">
+                            <h6>Мы сохраняем ваше время!</h6>
+                            <h2>Найди именно то, что тебе подойдет</h2>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <form id="search-form" name="gs" method="post" role="search" action="#">
+                            <div class="row">
+                                <div class="col-lg-3 align-self-center">
+                                    <fieldset>
+                                        <select name="area" class="form-select" aria-label="Area" id="chooseCategory"
+                                                onchange="this.form.click()">
+                                            <option selected>Все категории</option>
+                                            <option value="New Village">Транспорт</option>
+                                            <option value="Old Town">Авиа</option>
+                                            <option value="Modern City">Отели</option>
+                                        </select>
+                                    </fieldset>
+                                </div>
+                                <div class="col-lg-3 align-self-center">
+                                    <fieldset>
+                                        <select name="area" class="form-select" aria-label="Area" id="chooseCategory"
+                                                onchange="this.form.click()">
+                                            <option selected>Все регионы</option>
+                                            <option value="New Village">Астана</option>
+                                            <option value="Old Town">Алматы</option>
+                                            <option value="Modern City">Актау</option>
+                                        </select>
+                                    </fieldset>
+                                </div>
+                                <div class="col-lg-3 align-self-center">
+                                    <fieldset>
+                                        <select name="price" class="form-select" aria-label="Default select example"
+                                                id="chooseCategory" onchange="this.form.click()">
+                                            <option selected>Цена</option>
+                                            <option value="$100 - $250">10000 - 25000</option>
+                                            <option value="$250 - $500">25000 - 50000</option>
+                                            <option value="$100 - $250">50000 - 125000</option>
+                                            <option value="$250 - $500">125000 - 250000</option>
+                                            <option value="$500 - $1000">250000 - 500000</option>
+                                            <option value="$1000+">500000 и более</option>
+                                        </select>
+                                    </fieldset>
+                                </div>
+                                <div class="col-lg-3">
+                                    <fieldset>
+                                        <button class="main-button"><i class="fa fa-search"></i> Найти варианты</button>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        {% for cetegory in service.categories %}
+            {% if cetegory.partners %}
+
+                <div id="product-item" class="row justify-content-center mb-3 pb-3" style="margin-top: 100px">
+                    <div class="col-md-12 heading-section text-center ftco-animate fadeInUp ftco-animated category">
+                        <h1 class="big" style="margin-top: 65px">{{ cetegory.category_name }}</h1>
+                        <h2 class="mb-4">{{ cetegory.category_name }}</h2>
+                    </div>
+                </div>
+
+            {% endif %}
+            <div class="container-cards">
+                {% for partner in cetegory.partners %}
+
+                    <div class="blog-post-cards">
+                        <img src="{{ url_for('static', filename='files/partner_image/{}'.format(partner.partner_image)) }}"
+                             alt="Man">
+                        <a href="https://youtu.be/SdNaoYS_6Fo" target="_blank" class="category-cards">
+                            {{ partner.partner_brand_img.split('.')[0] }}
+                        </a>
+                        <div class="text-content-cards">
+                            <img src="{{ url_for('static', filename='files/partner_icon/{}'.format(partner.partner_brand_img)) }}"
+                                 alt="">
+                            <h2 class="post-title-cards">
+                                {{ partner.partner_name }}
+                            </h2>
+                            <div class="tags-cards">
+                                <a href="https://youtu.be/SdNaoYS_6Fo"
+                                   target="_blank">{{ partner.partner_description }}</a>
+
+                                <center>
+                                    <a href="/services/{{ service.service_id }}/{{ partner.partner_id }}" class="btn btn-outline-info order_btn">
+                                        Оформить
+                                    </a>
+                                </center>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+
+
+
+                <!--
+            <div class="container bootdey">
+                <div class="row">
+                    {% for partner in cetegory.partners %}
+                        <div class="product-grid col-xs-12 col-sm-6 col-md-3">
+                            <div class="product-item">
+                                <div class="image">
+                                    <img src="
+                {{ url_for('static', filename='files/partner_image/{}'.format(partner.partner_image)) }}"
+                                         alt="Product 1">
+                                </div>
+                                <div class="caption">
+                                    <div class="name text-center">
+                                        {{ partner.partner_name.capitalize() }}
+                                    </div>
+                                    <div class="price">
+                                        <span>{{ partner.partner_price }}</span>
+                                    </div>
+                                    {% if user.is_authenticated %}
+                                        <div class="cart">
+                                            <span>{{ partner.partner_description }}</span>
+                                            <a href="/services/{{ service.service_id }}>/{{ partner.partner_id }}">
+                                                <button type="button" class="btn btn-primary">Add to Cart</button>
+                                            </a>
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+
+                    {% endfor %}
+
+                </div>
+                -->
+            </div>
+
+        {% endfor %}
+
+    </main>
+
+
+
+
+{% endblock %}

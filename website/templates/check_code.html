@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% block title %}Code Confirm{% endblock %}
+{% block css_files %}
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="page-heading">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="top-text header-text">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <div class="box">
+            <div class="inner-box">
+                <div class="forms-wrap">
+                    <form method="POST" autocomplete="off" class="sign-in-form">
+                        <div class="logo">
+                            <img src="{{ url_for('static', filename='img/logo_dark.png') }}" alt="logo">
+                            <h4>Concierge&nbspService</h4>
+                        </div>
+
+                        <div class="heading">
+                            <h2>Подверждение аккаунта</h2>
+                        </div>
+
+                        <div class="actual-form">
+                            <div class="input-wrap">
+                                <input
+                                        type="text"
+                                        name="code"
+                                        minlength="4"
+                                        class="input-field"
+                                        autocomplete="off"
+                                        required
+                                />
+                                <label>Код</label>
+                            </div>
+
+                            <div style="margin-top: -23px">
+
+                                {% for message in get_flashed_messages() %}
+                                    <span style="color:red">{{ message }}</span>
+                                {% endfor %}
+                            </div>
+                            <br><br>
+
+
+                            <input type="submit" value="Подтвердить" class="sign-btn"/>
+
+                            <p class="text" style="text-align: center">
+                                Проверьте почту
+                            </p>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="carousel">
+                    <div class="images-wrapper">
+                        <img src="{{ url_for('static', filename='img/car.png') }}" class="image img-1 show" alt=""/>
+                        <img src="{{ url_for('static', filename='img/plane.png') }}" class="image img-2" alt=""/>
+                        <img src="{{ url_for('static', filename='img/boat.png') }}" class="image img-3" alt=""/>
+                    </div>
+
+                    <div class="text-slider">
+                        <div class="text-wrap">
+                            <div class="text-group">
+                                <h2>В любую точку страны</h2>
+                                <h2>В любую страну мира</h2>
+                                <h2>В любое бескрайнее путешествие</h2>
+                            </div>
+                        </div>
+
+                        <div class="bullets">
+                            <span class="active" data-value="1"></span>
+                            <span data-value="2"></span>
+                            <span data-value="3"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+
+{% endblock %}

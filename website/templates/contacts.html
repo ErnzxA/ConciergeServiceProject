@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block css_files %}
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/contacts.css') }}">
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="page-heading">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="top-text header-text">
+                        <h6>Поддерживайте с нами связь</h6>
+                        <h2>Feel free to send us a message about your business need</h2>
+                        <a href="#contects">
+                            <button type="button" id="form-submit" class="main-button "><i
+                                    class="fa fa-paper-plane"></i> Напишите нам
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+        <div id="contects"></div>
+
+    <div class="contact-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="inner-content">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div id="map">
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2905.1173308251696!2d76.95582405079433!3d43.26991768504619!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38836e822c4d98fb%3A0x9c1f0aef9753a95c!2zMiDRjdGC0LDQtiwg0JbQsNC90LPQtdC70YzQtNC40L0g0LrTqdGI0LXRgdGWIDMxLzEsINCQ0LvQvNCw0YLRiyAwNTAwMDA!5e0!3m2!1skk!2skz!4v1671034327636!5m2!1skk!2skz"
+                                            width="100%" height="650px" frameborder="0" style="border:0"
+                                            allowfullscreen></iframe>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 align-self-center">
+                                <form id="contact" action="" method="post">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <fieldset>
+                                                <input type="first_name" name="name" id="name" placeholder="Имя"
+                                                       autocomplete="on" required>
+                                            </fieldset>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <fieldset>
+                                                <input type="last_name" name="surname" id="surname"
+                                                       placeholder="Фамилтя"
+                                                       autocomplete="on" required>
+                                            </fieldset>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <fieldset>
+                                                <input type="text" name="email" id="email" pattern="[^ @]*@[^ @]*"
+                                                       placeholder="Ваш e-mail" required="">
+                                            </fieldset>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <ul>
+                                                <li><input type="checkbox" name="option1"
+                                                           value="cars"><span>Отели</span></li>
+                                                <li><input type="checkbox" name="option2" value="aparmtents"><span>Авиаперелёты</span>
+                                                </li>
+                                                <li><input type="checkbox" name="option3" value="shopping"><span>Автотранспорт</span>
+                                                </li>
+                                                <li><input type="checkbox" name="option4" value="food"><span>Яхты</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <fieldset>
+                                                <textarea name="message" type="text" class="form-control" id="message"
+                                                          placeholder="Ваше сообщение" required=""></textarea>
+                                            </fieldset>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <fieldset>
+                                                <button type="submit" id="form-submit" class="main-button "><i
+                                                        class="fa fa-paper-plane"></i> Отправить сообщение
+                                                </button>
+                                            </fieldset>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
+
+<!-- xfnxxdklhhxjijvw

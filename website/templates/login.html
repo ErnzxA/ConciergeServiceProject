@@ -1,0 +1,170 @@
+{% extends "base.html" %}
+{% block title %}Login{% endblock %}
+{% block css_files %}
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+{% endblock %}
+
+{% block content %}
+
+    <div class="page-heading">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="top-text header-text">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <div class="box">
+            <div class="inner-box">
+                <div class="forms-wrap">
+                    <form action="/login" method="post" autocomplete="off" class="sign-in-form">
+                        <div class="logo">
+                            <img src="{{ url_for('static', filename='img/logo_dark.png') }}" alt="logo">
+                            <h4>Concierge&nbspService</h4>
+                        </div>
+
+                        <div class="heading">
+                            <h2>Добро пожаловать</h2>
+                            <h6>Нет аккаунта?</h6>
+                            <a href="#" class="toggle">Зарегистрироваться</a>
+                        </div>
+
+                        <div class="actual-form">
+                            <div class="input-wrap">
+                                <input
+                                        type="email"
+                                        name="email"
+                                        minlength="4"
+                                        class="input-field"
+                                        autocomplete="off"
+                                        required
+                                />
+                                <label>Почта</label>
+                            </div>
+
+                            <div class="input-wrap">
+                                <input
+                                        type="password"
+                                        name="password"
+                                        minlength="7"
+                                        class="input-field"
+                                        autocomplete="off"
+                                        required
+                                />
+                                <label>Пароль</label>
+                            </div>
+
+                            {% for message in get_flashed_messages() %}
+                                <span style="color:red;position: absolute; margin-top: -25px">{{ message }}</span>
+                            {% endfor %}
+                            <br>
+
+                            <input type="submit" value="Войти" class="sign-btn"/>
+
+                            <p class="text">
+                                Забыли пароль?
+                                <a href="#">Получить помощь</a> в востановлении
+                            </p>
+                        </div>
+                    </form>
+
+                    <form action="/sign_up" method="post" autocomplete="off" class="sign-up-form">
+                        <div class="logo">
+                            <img src="{{ url_for('static', filename='img/logo_dark.png') }}" alt="logo">
+                            <h4>Concierge&nbspService</h4>
+                        </div>
+
+                        <div class="heading">
+                            <h2>Давайте приступим</h2>
+                            <h6>Уже есть аккаунт?</h6>
+                            <a href="#" class="toggle">Войти в аккаунт</a>
+                        </div>
+
+                        <div class="actual-form">
+                            <div class="input-wrap">
+                                <input
+                                        type="text"
+                                        name="username"
+                                        minlength="4"
+                                        class="input-field"
+                                        autocomplete="off"
+                                        required
+                                />
+                                <label>Имя</label>
+                            </div>
+
+                            <div class="input-wrap">
+                                <input
+                                        type="email"
+                                        name="email"
+                                        class="input-field"
+                                        autocomplete="off"
+                                        required
+                                />
+                                <label>Почта</label>
+                            </div>
+
+                            <div class="input-wrap">
+                                <input
+                                        type="password"
+                                        name="password"
+                                        minlength="7"
+                                        class="input-field"
+                                        autocomplete="off"
+                                        required
+                                />
+                                <label>Пароль</label>
+                            </div>
+
+                            {% for message in get_flashed_messages() %}
+                                <span style="color:red; position: absolute; margin-top: -25px">{{ message }}</span>
+                                <br>
+                            {% endfor %}
+
+                            <input type="submit" value="Sign Up" class="sign-btn"/>
+
+                            <p class="text">
+                                Входя в аккаунт или создавая новый, вы соглашаетесь с нашими
+                                <br>
+                                <a href="#">Правилами и условиями </a>
+                                <br>
+                                <a href="#">Положением о конфиденциальности</a>
+                            </p>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="carousel">
+                    <div class="images-wrapper">
+                        <img src="{{ url_for('static', filename='img/plane.png') }}" class="image img-1 show" alt=""/>
+                        <img src="{{ url_for('static', filename='img/car.png') }}" class="image img-2" alt=""/>
+                        <img src="{{ url_for('static', filename='img/boat.png') }}" class="image img-3" alt=""/>
+                    </div>
+
+                    <div class="text-slider">
+                        <div class="text-wrap">
+                            <div class="text-group">
+                                <h2>В любую страну мира</h2>
+                                <h2>В любую точку страны</h2>
+                                <h2>В любое бескрайнее путешествие</h2>
+                            </div>
+                        </div>
+
+                        <div class="bullets">
+                            <span class="active" data-value="1"></span>
+                            <span data-value="2"></span>
+                            <span data-value="3"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+{% endblock %}

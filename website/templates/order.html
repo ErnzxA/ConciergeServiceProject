@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% block title %}Profile{% endblock %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/order.css') }}">
+
+{% endblock %}
+
+{% block content %}
+    <main>
+        <div class="container">
+            <form method="POST" enctype="multipart/form-data">
+                <div class="row justify-content-md-center">
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="login-screen">
+                            <div class="login-box">
+                                <p href="#" class="login-logo" style="margin-bottom: 20px">
+                                <center>
+                                <h3>Оформи свой заказ прямо сейчас!</h3>
+                                </center>
+                                </p>
+                                <div class="row gutters" style="margin-top: 30px">
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                        <div class="form-group">
+                                            <input type="file" name="identity_card" class="form-control" placeholder="УД">
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                        <div class="form-group">
+                                            <input type="file" name="user_file" class="form-control" placeholder="Exel">
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12" style="margin-top: 20px">
+                                        <div class="form-group">
+                                            <input type="text" name="full_name" class="form-control" placeholder="Фио" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12" style="margin-top: 20px">
+                                        <div class="form-group">
+                                            <input type="number" name="count" class="form-control" min="1" max="100"
+                                                   placeholder="Количество">
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12" style="margin-top: 20px">
+                                        <div class="form-group">
+                                            <input type="date" name="userdate" min="{ current_date }}"
+                                                   class="form-control" required style="height: 38px">
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12" style="margin-top: 20px">
+                                        <div class="form-group">
+                                            <input type="text" name="info" class="form-control"
+                                                   placeholder="Для подробностей">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="actions clearfix" style="margin-top: 40px">
+                                    <button type="submit" class="btn btn-primary btn-block">Оформить</button>
+                                </div>
+                                <div class="or" style="margin-top: 30px">
+                                    <span>если у вас есть вопрос</span>
+                                </div>
+                                <a href="/contacts" class="additional-link">мы обязательно найдем на него ответ! </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div style="height: 30px"></div>
+
+    </main>
+{% endblock %}

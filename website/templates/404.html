@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %}Erorr{% endblock %}
+
+{% block css_files %}
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/erorr.css') }}">
+{% endblock %}
+
+
+{% block content %}
+
+    <main class="container-fluid page-error my-6" role="content">
+
+        <div class="align-self-center flex-sm-100 flex-xs-100">
+
+            <section class="error-section text-center">
+                <span class="four d-inline-block position-relative" data-erorr="four">
+                    <span class="text d-inline-block position-relative">4</span>
+                </span>
+                <span class="zero d-inline-block position-relative" data-erorr="zero">
+                    <span class="text d-inline-block position-relative">0</span>
+                </span>
+                <span class="four d-inline-block position-relative" id="four" data-erorr="four">
+                    <span class="text d-inline-block position-relative">4</span>
+                </span>
+            </section>
+
+            <section class="page-erorr-body px-xs-1 404 text-center text-xs-center text-xss-center mb-4">
+                <h1 class="text-secondary m-auto pb-3 mx-xs-1 text-capitalize">
+                    <strong class="text-danger"> Извините,</strong> страница не найдена.
+                </h1>
+                <p class="lead text-muted mb-2 pt-3 fs-4">
+                    Эта страница не существует. The <strong class="text-danger"> URL </strong> может быть неверным или
+                    может быть удалена..
+                </p>
+                <p class="text-center m-auto pt-3">
+                    <a href="/" class="btn btn-secondary text-muted bg-transparent btn-lg border border-secondary"
+                       role="button">
+                        Вернуться домой
+                    </a>
+
+                </p>
+            </section>
+        </div>
+
+    </main>
+
+{% endblock %}

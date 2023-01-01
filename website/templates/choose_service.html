@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block title %}Services{% endblock %}
+{% block css_files %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/choose_service.css') }}">
+
+{% endblock %}
+
+
+{% block content %}
+
+    <form method="POST" class="service_form">
+        <center>
+
+            <div class="col-sm-9 col-md-9">
+                <div class="row">
+
+                    <div class="service-wrapper">
+                        <div class="title">
+
+                            Выберите необходимые вам услуги
+                        </div>
+
+                        <div class="service-container">
+
+                            {% for service in services %}
+
+                                <label class="option_item">
+                                    <input type="checkbox" value="{{ service.service_id }}" name="checkbox_service" class="checkbox" checked>
+                                    <div class="option_inner facebook">
+                                        <div class="tickmark"></div>
+                                        <div class="icon">
+                                            <img src="{{ url_for('static', filename='icons/{}'.format(service.service_icon_src) )}}"
+                                                 alt="">
+                                        </div>
+                                        <div class="name">{{ service.service_title }}</div>
+                                    </div>
+                                </label>
+                            {% endfor %}
+                        </div>
+                        <center>
+                            <br>
+                            <input type="submit" value="Подтвердить" class="sign-btn"/>
+
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </center>
+    </form>
+
+{% endblock %}
