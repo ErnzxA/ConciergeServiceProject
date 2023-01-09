@@ -251,6 +251,7 @@ body, html {
 }
 .item-nav:hover{
 	background-color: rgba(255, 255, 255, 0.51);
+    color: #8D99AF;
 }
 #ITEMNAV1{padding-right: 1rem;padding-left: 1rem;}
 #ITEMNAV2{padding-right: 1rem;padding-left: 1rem;}
@@ -297,9 +298,15 @@ body, html {
 .header-area.header-sticky {
     min-height: 80px;
 }
+
+
+
 .navbarlinks  a.active {
     color: #8d99af
 }
+
+
+
 footer {
     border-top: 1px solid #eee;
     padding-top: 80px
@@ -465,10 +472,6 @@ footer .contact-us a:hover {
     .header-area .main-nav .logo {
         color: #1e1e1e
     }
-    .navbarlinks a.active, .header-area.header-sticky .nav .navbarlinks  a:hover {
-        color: #8d99af !important;
-        opacity: 100%;
-    }
     .col-12{
         padding: 0;
     }
@@ -478,6 +481,9 @@ footer .contact-us a:hover {
         height: 100px;
         box-shadow: none;
         text-align: center
+    }
+    .header-area .container {
+        padding: 0
     }
     .header-area .logo {
     }
