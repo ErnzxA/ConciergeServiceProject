@@ -9,23 +9,19 @@ input {
     font-family: "Poppins", sans-serif;
 }
 
-/*.header-area {*/
-/*    height: 87px;*/
-/*    background: white;*/
-/*}*/
-
-/*.header-area .main-nav a.logo {*/
-/*      margin-top: 8px;*/
-
-/*  background-image: url(../img/blacklogo.png);*/
-
-/*}*/
-.header-area{
-    position: fixed;
+.header-area {
+    height: 87px;
+    background: white;
 }
-.box{
-    position: initial;
+
+.header-area .main-nav a.logo {
+      margin-top: 8px;
+
+  background-image: url(../img/blacklogo.png);
+
 }
+
+
 main {
     width: 100%;
     min-height: 800px;
@@ -37,14 +33,10 @@ main {
     justify-content: center;
     margin-top: 20px;
 }
-.header-area{
-    position: relative;
-    z-index: 1;
-}
+
 .box {
     position: relative;
     width: 100%;
-    z-index: 2;
     max-width: 1020px;
     min-height: 640px;
     background-color: #fff;
@@ -435,30 +427,30 @@ main.sign-up-mode .carousel {
     .heading h2 {
         font-size: 1.73rem;
     }
+    .about{
+        font-size: 10px;
+    }
 }
 
 @media (max-width: 380px) {
 
     .heading h2 {
         font-size: 1.67rem;
-
     }
 }
 
 
 /* Дальше не работает*/
 @media (max-width: 376px) {
-
     .heading h2 {
         font-size: 1.2rem;
-
     }
 }
-
-
 @media (max-width: 340px) {
-    .heading {
-        padding-right: 20%;
+    .heading h2 {
+        font-size: 0.9rem;
     }
-
 }
+
+
+

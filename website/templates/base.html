@@ -25,91 +25,42 @@
 
 <!-- ***** Header Area Start ***** -->
 
-<header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <nav class="main-nav">
-                    <!-- ***** Logo Start ***** -->
-
-                    <a href="/" class="logo">
-
-                    </a>
-                    <!-- ***** Logo End ***** -->
-                    <!-- ***** Menu Start ***** -->
-
-                    <ul class="nav">
-                        <div style="display: flex" class="navbarlinks" id="NavbarLinksId">
-                            <a href="/#" class="item-nav {{ main_page }}"  id="ITEMNAV1">Главная</a>
-                            <a href="/#services" class=" item-nav" id="ITEMNAV2">Услуги</a>
-                            <a href="#" class="{{ partners }} item-nav" id="ITEMNAV3">Партнеры</a>
-                            <a href="/contacts" class="{{ contacts }} item-nav" id="ITEMNAV4">Контакты</a>
-                        </div>
-                        <div class= "drpdwnBttn">
-                            <a class="ButtonJs">
-                                <img src="static/icons/menu100.png" onclick="toggleResponsiveNav()">
-                            </a>
-                        </div>
-                        {% if user.is_authenticated %}
-                        <div>
-                            <img src="static/img/profile-menu-imgs/Ern.png" class="user-pic"
-                                     onclick="toggleProfile()">
-                            <a href="/profile">
-                                <img src="static/img/profile-menu-imgs/Ern.png"  id="respProfileIcon">
-                            </a>
-                                <div class="sub-profile-wrap" id="subProfile">
-
-                                    <div class="sub-profile">
-
-                                        <a href="/profile" class="sub-profile-link {{ profile }}">
-                                            <p>Профиль</p>
-                                            <span>></span>
-                                        </a>
-                                        <a href="#" class="sub-profile-link">
-                                            <p>Актуальные заказы</p>
-                                            <span>></span>
-                                        </a>
-                                        <a href="#" class="sub-profile-link">
-                                            <p>Исторя заказов</p>
-                                            <span>></span>
-                                        </a>
-                                        <a href="/logout" class="sub-profile-link {{ login }}}">
-                                            <p>Выход</p>
-                                            <span>></span>
-                                        </a>
-                                    </div>
-                                </div>
-                        </div>
-                        {% else %}
-                            <li class="navbarlinks"><a href="/login" class="item-nav {{ login }}" id="#ITEMNAV5">Вход</a></li>
-                        {% endif %}
-
-                    </ul>
-                    <!-- ***** Menu End ***** -->
-                </nav>
-            </div>
-        </div>
+<nav>
+    <div class="logo">
     </div>
-</header>
-<!-- ***** Header Area End ***** -->
-<script>
-    let subProfile= document.getElementById("subProfile")
-    function toggleProfile(){
-        subProfile.classList.toggle("open-profile");
-    }
-    let ItemNavs= document.getElementById("NavbarLinksId");
-    ItemNavs.style.boxShadow = "none";
-    function toggleResponsiveNav(){
-        ItemNavs.classList.toggle("openRsNav");
-        if(ItemNavs.style.boxShadow === "none")
-        {
-            ItemNavs.style.boxShadow = "0 0 2px 2px rgba(0, 0, 0, 0.17)";
-        }
-        else
-            ItemNavs.style.boxShadow = "none";
+    <button type="button" class="btn-hamburger" data-action="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <ul class="nav-menu">
+        <li class="nav-item"><a class="{{ main_page }}" href="/">Главная</a></li>
+        <li class="nav-item"><a href="/#services">Услуги</a></li>
+        <li class="nav-item"><a href="#">Партнеры</a></li>
+        <li class="nav-item"><a class="{{ contacts }}" href="/contacts">Контакты</a></li>
+        {% if user.is_authenticated %}
+        <li class="nav-item dropdown">
+            <a href="#" data-action="dropdown-toggle"><img src="static/img/profile-menu-imgs/Ern.png" class="dropdownImg"></a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="/profile">Профиль</a>
+                <a class="dropdown-item" href="#">Актуальные заказы</a>
+                <a class="dropdown-item" href="#">История заказов</a>
 
-    }
-</script>
+                <a class="dropdown-item" href="/logout">Выход</a>
+            </div>
+        </li>
+        {% else %}
+            <li class="nav-item">
+                <a href="/login" data-action="dropdown-toggle">Войти</a>
+            </li>
+        {% endif %}
+
+    </ul>
+</nav>
+
+<!-- ***** Header Area End ***** -->
 
 
 {% block content %}
@@ -166,8 +117,8 @@
                         <div class="col-lg-6">
                             <a href="#">+7 775 514 6461</a>
                         </div>
-                        <div class="col-lg-6">
-                            <a href="#">conciergekz04@gmail.com</a>
+                        <div class="col-lg-6" style="margin-bottom: 20px">
+                            <a href="#" >conciergekz04@gmail.com</a>
                         </div>
                     </div>
                 </div>

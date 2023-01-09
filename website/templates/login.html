@@ -2,13 +2,23 @@
 {% block title %}Login{% endblock %}
 {% block css_files %}
     <!-- Additional CSS Files -->
- <script src="/static/vendor/jquery/jquery.min.js"></script>
-    <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
 {% endblock %}
 
 {% block content %}
-<body>
+
+    <div class="page-heading">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="top-text header-text">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <main>
         <div class="box">
             <div class="inner-box">
@@ -157,5 +167,4 @@
         </div>
     </main>
     <script src="{{ url_for('static', filename='js/app.js') }}"></script>
-</body>
 {% endblock %}
