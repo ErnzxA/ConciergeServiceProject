@@ -2,8 +2,7 @@
 {% block title %}Main{% endblock %}
 
 {% block css_files %}
-    <script src="/static/vendor/jquery/jquery.min.js"></script>
-    <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 {% endblock %}
 
@@ -22,7 +21,7 @@
                         <div class="row">
                             <div class="col-lg-3 align-self-center">
                                 <fieldset>
-                                    <select name="area" class="form-select" aria-label="Area"
+                                    <select name="area" class="form-select" aria-label="Area" id="chooseCategory"
                                             onchange="this.form.click()">
                                         <option selected>Все категории</option>
                                         <option value="New Village">Транспорт</option>
@@ -33,7 +32,7 @@
                             </div>
                             <div class="col-lg-3 align-self-center">
                                 <fieldset>
-                                    <select name="area" class="form-select" aria-label="Area"
+                                    <select name="area" class="form-select" aria-label="Area" id="chooseCategory"
                                             onchange="this.form.click()">
                                         <option selected>Все регионы</option>
                                         <option value="New Village">Астана</option>

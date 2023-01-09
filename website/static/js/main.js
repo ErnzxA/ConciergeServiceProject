@@ -21,89 +21,23 @@ function scrollToID(id, speed) {
 }
 
 
+let nav = document.querySelector('nav');
+let dropdown = nav.querySelector('.dropdown');
+let dropdownToggle = nav.querySelector("[data-action='dropdown-toggle']");
+let navToggle = nav.querySelector("[data-action='nav-toggle']");
 
-(function ($) {
+dropdownToggle.addEventListener('click', () => {
+	if (dropdown.classList.contains('show')) {
+		dropdown.classList.remove('show');
+	} else {
+		dropdown.classList.add('show');
+	}
+})
 
-	"use strict";
-
-	// Header Type = Fixed
-  $(window).scroll(function() {
-    var scroll = $(window).scrollTop();
-    var box = $('.header-text').height();
-    var header = $('header').height();
-
-    if (scroll >= box - header + 15) {
-      $("header").addClass("background-header");
-    } else {
-      $("header").removeClass("background-header");
-    }
-  });
-
-
-  // Acc
-    $(document).on("click", ".naccs .menu div", function() {
-      var numberIndex = $(this).index();
-
-      if (!$(this).is("active")) {
-          $(".naccs .menu div").removeClass("active");
-          $(".naccs ul li").removeClass("active");
-
-          $(this).addClass("active");
-          $(".naccs ul").find("li:eq(" + numberIndex + ")").addClass("active");
-
-          var listItemHeight = $(".naccs ul")
-            .find("li:eq(" + numberIndex + ")")
-            .innerHeight();
-          $(".naccs ul").height(listItemHeight + "px");
-        }
-    });
-
-
-	$('.owl-listing').owlCarousel({
-		items:1,
-		loop:true,
-		dots: true,
-		nav: false,
-		autoplay: true,
-		margin:30,
-		  responsive:{
-			  0:{
-				  items:1
-			  },
-			  600:{
-				  items:1
-			  },
-			  1000:{
-				  items:1
-			  },
-			  1600:{
-				  items:1
-			  }
-		  }
-	})
-
-
-	// Menu Dropdown Toggle
-  if($('.menu-trigger').length){
-    $(".menu-trigger").on('click', function() {
-      $(this).toggleClass('active');
-      $('.header-area .nav').slideToggle(200);
-    });
-  }
-
-
-	// Page loading animation
-	 $(window).on('load', function() {
-
-        $('#js-preloader').addClass('loaded');
-
-    });
-
-
-
-
-
-
-
-
-})(window.jQuery);
+navToggle.addEventListener('click', () => {
+	if (nav.classList.contains('opened')) {
+		nav.classList.remove('opened');
+	} else {
+		nav.classList.add('opened');
+	}
+})
