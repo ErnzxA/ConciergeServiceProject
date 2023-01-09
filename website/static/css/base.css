@@ -37,7 +37,7 @@ body, html {
     width: 260px;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.5s;
+    transition: max-width 0.5s;
 }
 .open-profile{
     max-width: 260px;
@@ -51,14 +51,18 @@ body, html {
     overflow: hidden;
     transition: max-height 0.5s;
 }
+#NavbarLinksId{
+	box-shadow:none;
+}
 .openRsNav{
-    max-width: 300px;
+    max-width: 100px;
+	box-shadow: none;
 }
 .navbarlinks.openRsNav{
     max-width: 400px;
 }
 .navbarlinks-wrap.openRsNav{
-    max-width: 400px;
+    max-width: 800px;
 }
 
 .user-pic{
@@ -79,7 +83,7 @@ body, html {
 .sub-profile{
     background: #fff;
     border-radius: 5%;
-    box-shadow: 0 0 1px 2px rgba(0, 0, 0, 0.15);
+    box-shadow: 2px 2px 1px 2px rgba(0, 0, 0, 0.15);
     font-family: Montserrat, sans-serif;
     padding: 1rem;
     margin: 10px;
@@ -245,10 +249,14 @@ body, html {
     padding-right: 2rem;
     margin-top: 5px;
 }
+.item-nav:hover{
+	background-color: rgba(255, 255, 255, 0.51);
+}
 #ITEMNAV1{padding-right: 1rem;padding-left: 1rem;}
 #ITEMNAV2{padding-right: 1rem;padding-left: 1rem;}
 #ITEMNAV3{padding-right: 1rem;padding-left: 1rem;}
 #ITEMNAV4{padding-right: 1rem;padding-left: 1rem;}
+#ITEMNAV5{padding-right: 1rem;padding-left: 1rem;}
 #respProfileIcon{
     max-width: 0;
     width:50px;
@@ -259,20 +267,12 @@ body, html {
     margin: 0;
     padding: 0;
 }
-.navbarlinks:last-child a {
-    color: #2a2a2a !important;
-    text-transform: capitalize;
-    padding: 0 2rem;
-    font-weight: 400
-}
-
-.navbarlinks:last-child a.active, .header-area .main-nav .nav:last-child a:hover {
-    color: #000 !important
-}
 
 .navbarlinks a {
     display: block;
     font-weight: 650;
+	padding-left: 1rem;
+	padding-right: 1rem;
     font-size: 14px;
     color: #252525;
     text-transform: uppercase;
@@ -295,17 +295,11 @@ body, html {
 }
 
 .header-area.header-sticky {
-    min-height: 80px
+    min-height: 80px;
 }
-
-
-
 .navbarlinks  a.active {
     color: #8d99af
 }
-
-
-
 footer {
     border-top: 1px solid #eee;
     padding-top: 80px
@@ -430,7 +424,7 @@ footer .contact-us a:hover {
     .navbarlinks  a{
         font-size: 12px;
     }
-    #ITEMNAV1, #ITEMNAV2, #ITEMNAV3, #ITEMNAV4{
+    #ITEMNAV1, #ITEMNAV2, #ITEMNAV3, #ITEMNAV4, ITEMNAV5{
     padding-left: 12px;
         padding-right: 12px;
 
@@ -443,7 +437,7 @@ footer .contact-us a:hover {
     }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
     .header-area .main-nav a.logo {
         background-image: url(../img/blacklogo.png);
         width: 130px;
@@ -452,6 +446,9 @@ footer .contact-us a:hover {
         background-position: center;
         float: left
     }
+	#NavbarLinksId{
+		box-shadow: none;
+	}
     #respProfileIcon{
         max-width: 100px;
     }
@@ -468,7 +465,6 @@ footer .contact-us a:hover {
     .header-area .main-nav .logo {
         color: #1e1e1e
     }
-
     .navbarlinks a.active, .header-area.header-sticky .nav .navbarlinks  a:hover {
         color: #8d99af !important;
         opacity: 100%;
@@ -482,9 +478,6 @@ footer .contact-us a:hover {
         height: 100px;
         box-shadow: none;
         text-align: center
-    }
-    .header-area .container {
-        padding: 0
     }
     .header-area .logo {
     }
@@ -504,6 +497,7 @@ footer .contact-us a:hover {
         display: flex;
         justify-content: right;
     }
+
     .header-area .main-nav {
         align-items: center;
     }
@@ -551,4 +545,9 @@ footer .contact-us a:hover {
     .header-area .main-nav .nav {
         display: flex !important
     }
+}
+@media (max-width: 370px) {
+	.nav{
+		max-width: 140px;
+	}
 }

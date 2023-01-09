@@ -199,8 +199,6 @@ form#contact button:hover {
     background-size: cover;
     background-image: url(../img/pages_bg/heading-bg.jpg);
     padding: 200px 0 120px 0;
-
-    position: relative;
     overflow: hidden
 }
 

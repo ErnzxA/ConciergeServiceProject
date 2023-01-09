@@ -9,19 +9,23 @@ input {
     font-family: "Poppins", sans-serif;
 }
 
-.header-area {
-    height: 87px;
-    background: white;
+/*.header-area {*/
+/*    height: 87px;*/
+/*    background: white;*/
+/*}*/
+
+/*.header-area .main-nav a.logo {*/
+/*      margin-top: 8px;*/
+
+/*  background-image: url(../img/blacklogo.png);*/
+
+/*}*/
+.header-area{
+    position: fixed;
 }
-
-.header-area .main-nav a.logo {
-      margin-top: 8px;
-
-  background-image: url(../img/blacklogo.png);
-
+.box{
+    position: initial;
 }
-
-
 main {
     width: 100%;
     min-height: 800px;
@@ -33,10 +37,14 @@ main {
     justify-content: center;
     margin-top: 20px;
 }
-
+.header-area{
+    position: relative;
+    z-index: 1;
+}
 .box {
     position: relative;
     width: 100%;
+    z-index: 2;
     max-width: 1020px;
     min-height: 640px;
     background-color: #fff;

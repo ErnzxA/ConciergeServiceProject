@@ -81,7 +81,7 @@
                                 </div>
                         </div>
                         {% else %}
-                            <li><a href="/login" class="{{ login }}">Вход</a></li>
+                            <li class="navbarlinks"><a href="/login" class="item-nav {{ login }}" id="#ITEMNAV5">Вход</a></li>
                         {% endif %}
 
                     </ul>
@@ -91,17 +91,25 @@
         </div>
     </div>
 </header>
+<!-- ***** Header Area End ***** -->
 <script>
     let subProfile= document.getElementById("subProfile")
     function toggleProfile(){
         subProfile.classList.toggle("open-profile");
     }
     let ItemNavs= document.getElementById("NavbarLinksId");
+    ItemNavs.style.boxShadow = "none";
     function toggleResponsiveNav(){
         ItemNavs.classList.toggle("openRsNav");
+        if(ItemNavs.style.boxShadow === "none")
+        {
+            ItemNavs.style.boxShadow = "0 0 2px 2px rgba(0, 0, 0, 0.17)";
+        }
+        else
+            ItemNavs.style.boxShadow = "none";
+
     }
 </script>
-<!-- ***** Header Area End ***** -->
 
 
 {% block content %}
