@@ -448,10 +448,9 @@ main.sign-up-mode .carousel {
 }
 
 
-@media (max-width: 340) {
+@media (max-width: 340px) {
     .heading {
-        position: absolute;
         padding-right: 20%;
     }
-}
 
+}

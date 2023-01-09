@@ -64,11 +64,11 @@ def service_confirm():
     if current_user.is_authenticated:
         return redirect(url_for('views.home'))
 
-    try:
-        if not session['open_service_confirm']:
-            return redirect(url_for('views.home'))
-    except:
-        return redirect(url_for('views.home'))
+    # try:
+    #     if not session['open_service_confirm']:
+    #         return redirect(url_for('views.home'))
+    # except:
+    #     return redirect(url_for('views.home'))
 
     if request.method == 'POST':
         services_id = request.form.getlist('checkbox_service')

@@ -33,34 +33,74 @@
                     <!-- ***** Logo Start ***** -->
 
                     <a href="/" class="logo">
+
                     </a>
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
+
                     <ul class="nav">
-                        <li><a href="/" class="{{ main_page }}">Главная</a></li>
-
-                            <li><a href="/#services">Услуги</a></li>
-
-                        <li><a href="/contacts" class="{{ contacts }}">Контакты</a></li>
-                        <li><a href="/profile" class="{{ profile }}">Профиль</a></li>
-
+                        <div style="display: flex" class="navbarlinks" id="NavbarLinksId">
+                            <a href="/#" class="item-nav {{ main_page }}"  id="ITEMNAV1">Главная</a>
+                            <a href="/#services" class=" item-nav" id="ITEMNAV2">Услуги</a>
+                            <a href="#" class="{{ partners }} item-nav" id="ITEMNAV3">Партнеры</a>
+                            <a href="/contacts" class="{{ contacts }} item-nav" id="ITEMNAV4">Контакты</a>
+                        </div>
+                        <div class= "drpdwnBttn">
+                            <a class="ButtonJs">
+                                <img src="static/icons/menu100.png" onclick="toggleResponsiveNav()">
+                            </a>
+                        </div>
                         {% if user.is_authenticated %}
-                            <li><a href="/logout" class="{{ login }}">Выход</a></li>
+                        <div>
+                            <img src="static/img/profile-menu-imgs/Ern.png" class="user-pic"
+                                     onclick="toggleProfile()">
+                            <a href="/profile">
+                                <img src="static/img/profile-menu-imgs/Ern.png"  id="respProfileIcon">
+                            </a>
+                                <div class="sub-profile-wrap" id="subProfile">
+
+                                    <div class="sub-profile">
+
+                                        <a href="/profile" class="sub-profile-link {{ profile }}">
+                                            <p>Профиль</p>
+                                            <span>></span>
+                                        </a>
+                                        <a href="#" class="sub-profile-link">
+                                            <p>Актуальные заказы</p>
+                                            <span>></span>
+                                        </a>
+                                        <a href="#" class="sub-profile-link">
+                                            <p>Исторя заказов</p>
+                                            <span>></span>
+                                        </a>
+                                        <a href="/logout" class="sub-profile-link {{ login }}}">
+                                            <p>Выход</p>
+                                            <span>></span>
+                                        </a>
+                                    </div>
+                                </div>
+                        </div>
                         {% else %}
                             <li><a href="/login" class="{{ login }}">Вход</a></li>
                         {% endif %}
 
                     </ul>
-                    <a class='menu-trigger'>
-                        <span>Menu</span>
-                    </a>
                     <!-- ***** Menu End ***** -->
                 </nav>
             </div>
         </div>
     </div>
 </header>
-
+<script>
+    let subProfile= document.getElementById("subProfile")
+    function toggleProfile(){
+        subProfile.classList.toggle("open-profile");
+    }
+    let ItemNavs= document.getElementById("NavbarLinksId");
+    function toggleResponsiveNav(){
+        ItemNavs.classList.toggle("openRsNav");
+    }
+</script>
 <!-- ***** Header Area End ***** -->
 
 
