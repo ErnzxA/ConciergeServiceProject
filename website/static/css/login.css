@@ -12,6 +12,7 @@ input {
 .header-area {
     height: 87px;
     background: white;
+    z-index: 999;
 }
 
 .header-area .main-nav a.logo {
@@ -42,7 +43,7 @@ main {
     background-color: #fff;
     border-radius: 3.3rem;
     box-shadow: 0 60px 40px -30px rgba(0, 0, 0, 0.27);
-
+    z-index: 1;
 }
 
 .inner-box {
@@ -427,30 +428,88 @@ main.sign-up-mode .carousel {
     .heading h2 {
         font-size: 1.73rem;
     }
-    .about{
-        font-size: 10px;
-    }
 }
 
 @media (max-width: 380px) {
 
     .heading h2 {
         font-size: 1.67rem;
+
     }
 }
 
-
+    .input-wrap{
+        margin-right: 0;
+        display: inline-block;
+    }
+    .input-field{
+        align-items: center;
+    }
+}
 /* Дальше не работает*/
 @media (max-width: 376px) {
+
     .heading h2 {
         font-size: 1.2rem;
+
     }
-}
+    .sign-in-form{
+        padding-left: 0;
+        padding-right: 0;
+        align-items: center;
+        align-content: center;
+    }
+    .sign-up-form{
+        padding-left: 0;
+        padding-right: 0;
+
+        align-items: center;
+        align-content: center;
+    }
+    .heading{
+        padding:0;
+    }
+    .actual-form{
+        display: inline;
+        align-items: center;
+        align-content: center;
+    }
+
 @media (max-width: 340px) {
-    .heading h2 {
-        font-size: 0.9rem;
+    .heading {
+        padding-right: 20%;
+    }
+    .inner-box{
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .sign-in-form{
+        padding-left: 0;
+        padding-right: 0;
+        align-items: center;
+        align-content: center;
+    }
+    .sign-up-form{
+        padding-left: 0;
+        padding-right: 0;
+
+        align-items: center;
+        align-content: center;
+    }
+    .heading{
+        padding:0;
+    }
+    .actual-form{
+        display: inline;
+        align-items: center;
+        align-content: center;
+    }
+
+    .input-wrap{
+        margin-right: 0;
+        display: inline-block;
+    }
+    .input-field{
+        align-items: center;
     }
 }
-
-
-
