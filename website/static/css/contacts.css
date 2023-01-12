@@ -14,7 +14,8 @@ li, ul {
 }
 
 header {
-    display: block
+    display: block;
+    z-index: 1;
 }
 
 * {
@@ -65,15 +66,19 @@ body, html {
 }
 
 .contact-page {
-    margin: 120px 0
+    margin: 120px 0;
+    z-index: 1;
 }
 
 .contact-page .inner-content {
-    background-color: #f7f7f7;
+    background-color: #ffffff;
     border-radius: 7px;
     overflow: hidden
 }
-
+.row{
+    position: relative;
+    z-index: 0;
+}
 .contact-page .inner-content #map {
     margin-bottom: -8px;
     overflow: hidden;
@@ -83,7 +88,8 @@ body, html {
 
 form#contact {
     position: relative;
-    margin: 0 60px 0 45px
+    margin: 0 60px 0 45px;
+    z-index: 1;
 }
 
 form#contact input {
@@ -114,7 +120,6 @@ form#contact input[type=checkbox] {
     width: 15px;
     min-width: 15px;
     height: 15px;
-    background-color: transparent;
     border: 1px solid #8d99af;
     outline: 0;
     cursor: pointer
@@ -199,9 +204,9 @@ form#contact button:hover {
     background-size: cover;
     background-image: url(../img/pages_bg/heading-bg.jpg);
     padding: 200px 0 120px 0;
-
     position: relative;
-    overflow: hidden
+    z-index: 0;
+    overflow: hidden;
 }
 
 .page-heading .top-text {
