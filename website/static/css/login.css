@@ -438,14 +438,7 @@ main.sign-up-mode .carousel {
     }
 }
 
-    .input-wrap{
-        margin-right: 0;
-        display: inline-block;
-    }
-    .input-field{
-        align-items: center;
-    }
-}
+
 /* Дальше не работает*/
 @media (max-width: 376px) {
 
@@ -453,27 +446,8 @@ main.sign-up-mode .carousel {
         font-size: 1.2rem;
 
     }
-    .sign-in-form{
-        padding-left: 0;
-        padding-right: 0;
-        align-items: center;
-        align-content: center;
-    }
-    .sign-up-form{
-        padding-left: 0;
-        padding-right: 0;
+}
 
-        align-items: center;
-        align-content: center;
-    }
-    .heading{
-        padding:0;
-    }
-    .actual-form{
-        display: inline;
-        align-items: center;
-        align-content: center;
-    }
 
 @media (max-width: 340px) {
     .heading {
@@ -510,6 +484,6 @@ main.sign-up-mode .carousel {
         display: inline-block;
     }
     .input-field{
-        align-items: center;
+        position: center;
     }
 }
