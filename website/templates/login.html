@@ -2,13 +2,23 @@
 {% block title %}Login{% endblock %}
 {% block css_files %}
     <!-- Additional CSS Files -->
- <script src="/static/vendor/jquery/jquery.min.js"></script>
-    <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
 {% endblock %}
 
 {% block content %}
-<body>
+
+    <div class="page-heading">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="top-text header-text">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <main>
         <div class="box">
             <div class="inner-box">
@@ -111,6 +121,17 @@
                                 />
                                 <label>Пароль</label>
                             </div>
+                            <div class="heading" id="regAs">
+                                <h6>Зарегистрироваться как:</h6>
+                            </div>
+
+                            <div class="Switchbody">
+                                <p id="ConsumerTxt">Consumer</p>
+                                <div style="transition: 0.3s">
+                                    <input onclick="toggleSwitch()" id="toggle" class="toggle_switch" type="checkbox" role="switch" name="toggle" value="on">
+                                </div>
+                                <p id="B2bTxt">Business</p>
+                            </div>
 
                             {% for message in get_flashed_messages() %}
                                 <span style="color:red; position: absolute; margin-top: -25px">{{ message }}</span>
@@ -126,6 +147,7 @@
                                 <br>
                                 <a href="#">Положением о конфиденциальности</a>
                             </p>
+
                         </div>
                     </form>
                 </div>
@@ -136,7 +158,6 @@
                         <img src="{{ url_for('static', filename='img/car.png') }}" class="image img-2" alt=""/>
                         <img src="{{ url_for('static', filename='img/boat.png') }}" class="image img-3" alt=""/>
                     </div>
-
                     <div class="text-slider">
                         <div class="text-wrap">
                             <div class="text-group">
@@ -157,5 +178,4 @@
         </div>
     </main>
     <script src="{{ url_for('static', filename='js/app.js') }}"></script>
-</body>
 {% endblock %}

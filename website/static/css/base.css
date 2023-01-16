@@ -377,7 +377,7 @@ footer .contact-us a:hover {
     }
 }
 @media (max-width: 1200px) {
-    
+
     .header-area .main-nav:before {
         display: none
     }

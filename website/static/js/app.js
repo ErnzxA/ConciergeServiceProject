@@ -37,3 +37,17 @@ function moveSlider() {
 bullets.forEach((bullet) => {
   bullet.addEventListener("click", moveSlider);
 });
+document.getElementById("ConsumerTxt").style.fontWeight="600";
+function toggleSwitch(){
+  let Consumerfontweight= document.getElementById("ConsumerTxt").style.fontWeight;
+  if(Consumerfontweight === "600")
+  {
+    document.getElementById("ConsumerTxt").style.fontWeight="400";
+    document.getElementById("B2bTxt").style.fontWeight="600";
+  }
+  else
+  {
+    document.getElementById("ConsumerTxt").style.fontWeight="600";
+    document.getElementById("B2bTxt").style.fontWeight="400";
+  }
+}

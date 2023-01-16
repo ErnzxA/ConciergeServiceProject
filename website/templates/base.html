@@ -26,7 +26,7 @@
 <!-- ***** Header Area Start ***** -->
 
 <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
-    <div>
+    <div class="container">
         <div class="row">
             <div class="col-12">
                 <nav class="main-nav">
@@ -39,17 +39,18 @@
                     <!-- ***** Menu Start ***** -->
 
                     <ul class="nav">
+                        <div class= "drpdwnBttn">
+                            <a class="ButtonJs">
+                                <img src="static/icons/menu100.png" onclick="toggleResponsiveNav()">
+                            </a>
+                        </div>
                         <div style="display: flex" class="navbarlinks" id="NavbarLinksId">
                             <a href="/#" class="item-nav {{ main_page }}"  id="ITEMNAV1">Главная</a>
                             <a href="/#services" class=" item-nav" id="ITEMNAV2">Услуги</a>
                             <a href="#" class="{{ partners }} item-nav" id="ITEMNAV3">Партнеры</a>
                             <a href="/contacts" class="{{ contacts }} item-nav" id="ITEMNAV4">Контакты</a>
                         </div>
-                        <div class= "drpdwnBttn">
-                            <a class="ButtonJs">
-                                <img src="static/icons/menu100.png" onclick="toggleResponsiveNav()">
-                            </a>
-                        </div>
+
                         {% if user.is_authenticated %}
                         <div>
                             <img src="static/img/profile-menu-imgs/Ern.png" class="user-pic"
@@ -102,12 +103,9 @@
     function toggleResponsiveNav(){
         ItemNavs.classList.toggle("openRsNav");
         if(ItemNavs.style.boxShadow === "none")
-        {
             ItemNavs.style.boxShadow = "0 0 2px 2px rgba(0, 0, 0, 0.17)";
-        }
         else
             ItemNavs.style.boxShadow = "none";
-
     }
 </script>
 
@@ -125,6 +123,7 @@
         <div class="row">
             <div class="col-lg-4">
                 <div class="about">
+
                     <div class="logo">
                         <img src="{{ url_for('static', filename='img/logo_black.png') }}" alt="Plot Listing">
                     </div>

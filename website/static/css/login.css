@@ -8,21 +8,35 @@ body,
 input {
     font-family: "Poppins", sans-serif;
 }
-
 .header-area {
     height: 87px;
     background: white;
     z-index: 999;
 }
-
+.toggle_switch{
+    margin-right: 0;
+}
 .header-area .main-nav a.logo {
       margin-top: 8px;
-
-  background-image: url(../img/blacklogo.png);
+      background-image: url(../img/blacklogo.png);
 
 }
-
-
+#ConsumerTxt{
+    font-weight: 600;
+    width:78px;
+    margin-left: 0;
+    transition: 0.1s;
+}
+#B2bTxt{
+    font-weight: 400;
+    width: 78px;
+    transition: 0.1s;
+    margin-right: 0;
+    padding-left: 4px;
+}
+.Switchbody{
+    width: inherit;
+}
 main {
     width: 100%;
     min-height: 800px;
@@ -183,7 +197,9 @@ label {
 
 
 .sign-btn:hover {
-    background-color: #fd7171;
+    background-color: whitesmoke;
+    color: black;
+    box-shadow: 0 0 4px  black;
 }
 
 .text {
@@ -355,7 +371,9 @@ main.sign-up-mode .carousel {
         margin: 2rem;
         text-align: center;
     }
-
+    #regAs{
+        margin:0;
+    }
     form.sign-up-form {
         transform: translateX(100%);
     }
@@ -453,10 +471,14 @@ main.sign-up-mode .carousel {
     .heading {
         padding-right: 20%;
     }
+    .sign-btn{
+        margin-bottom: 0;
+    }
     .inner-box{
         padding-left: 0;
         padding-right: 0;
     }
+
     .sign-in-form{
         padding-left: 0;
         padding-right: 0;
