@@ -2179,3 +2179,76 @@ h5, h6 {
     font-family: 'Montserrat';
     font-weight: 300;
 }
+/*new founders */
+.card0 .border {
+  height: 369px;
+  width: 290px;
+  background: transparent;
+  border-radius: 10px;
+  transition: border 1s;
+  position: relative;
+}
+.card0 .border:hover {
+  border: 1px solid #fff;
+}
+.card {
+  height: 379px;
+  width: 300px;
+  background: #808080;
+  border-radius: 10px;
+  transition: background 0.8s;
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 70px 63px -60px #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.founder {
+  background: url("../img/main_page/founder.jpg") center center no-repeat;
+  background-size: 300px;
+}
+.founder:hover {
+  background: url("../img/main_page/founder.jpg") left center no-repeat;
+  background-size: 600px;
+}
+.cofounder {
+  background: url("../img/main_page/co-founder.jpg") center center no-repeat;
+  background-size: 300px;
+}
+.cofounder:hover {
+  background: url("../img/main_page/co-founder.jpg") left center no-repeat;
+  background-size: 600px;
+}
+
+.card0:hover h2 {
+  opacity: 100;
+    text-shadow: 0px 0px 10px black;
+}
+.card0:hover .fa {
+  opacity: 100;
+}
+.card0 h2 {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #fff;
+  margin: 20px;
+  opacity: 0;
+  transition: opacity 1s;
+}
+.card0 .fa {
+  opacity: 0;
+  transition: opacity 1s;
+}
+.card0 .icons {
+  position: absolute;
+  fill: #fff;
+  color: #fff;
+  height: 130px;
+  top: 226px;
+  width: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}

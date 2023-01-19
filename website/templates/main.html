@@ -3,370 +3,369 @@
 
 {% block css_files %}
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 {% endblock %}
 
 {% block content %}
-    <div class="main-banner">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="top-text header-text">
-                        <h6>Мы сохраняем ваше время!</h6>
-                        <h2>Найди именно то, что тебе подойдет</h2>
-                    </div>
-                </div>
-                <div class="col-lg-12">
-                    <form id="search-form" name="gs" method="post" role="search" action="#">
-                        <div class="row">
-                            <div class="col-lg-3 align-self-center">
-                                <fieldset>
-                                    <select name="area" class="form-select" aria-label="Area" id="chooseCategory"
-                                            onchange="this.form.click()">
-                                        <option selected>Все категории</option>
-                                        <option value="New Village">Транспорт</option>
-                                        <option value="Old Town">Авиа</option>
-                                        <option value="Modern City">Отели</option>
-                                    </select>
-                                </fieldset>
-                            </div>
-                            <div class="col-lg-3 align-self-center">
-                                <fieldset>
-                                    <select name="area" class="form-select" aria-label="Area" id="chooseCategory"
-                                            onchange="this.form.click()">
-                                        <option selected>Все регионы</option>
-                                        <option value="New Village">Астана</option>
-                                        <option value="Old Town">Алматы</option>
-                                        <option value="Modern City">Актау</option>
-                                    </select>
-                                </fieldset>
-                            </div>
-                            <div class="col-lg-3 align-self-center">
-                                <fieldset>
-                                    <select name="price" class="form-select" aria-label="Default select example"
-                                            id="chooseCategory" onchange="this.form.click()">
-                                        <option selected>Цена</option>
-                                        <option value="$100 - $250">10000 - 25000</option>
-                                        <option value="$250 - $500">25000 - 50000</option>
-                                        <option value="$100 - $250">50000 - 125000</option>
-                                        <option value="$250 - $500">125000 - 250000</option>
-                                        <option value="$500 - $1000">250000 - 500000</option>
-                                        <option value="$1000+">500000 и более</option>
-                                    </select>
-                                </fieldset>
-                            </div>
-                            <div class="col-lg-3">
-                                <fieldset>
-                                    <button class="main-button"><i class="fa fa-search"></i> Найти варианты</button>
-                                </fieldset>
-                            </div>
-                        </div>
-                    </form>
+<div class="main-banner">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="top-text header-text">
+                    <h6>Мы сохраняем ваше время!</h6>
+                    <h2>Найди именно то, что тебе подойдет</h2>
                 </div>
             </div>
-            <div class="col-lg-10 offset-lg-1">
-                <ul class="categories">
-                    <li><a href="category.html"><span class="icon"><img
-                            src="{{ url_for('static', filename='icons/main_icon/hotel_icon.png') }}"
-                            alt="Home"></span> Отели</a></li>
-                    <li><a href="listing.html"><span class="icon"><img
-                            src="{{ url_for('static', filename='icons/main_icon/plane_icon.png') }}"
-                            alt="Food"></span> Авиация</a></li>
-                    <li><a href="#"><span class="icon"><img
-                            src="{{ url_for('static', filename='icons/main_icon/car_icon.png') }}"
-                            alt="Vehicle"></span>
-                        Автотранспорт</a></li>
-                    <li><a href="#"><span class="icon"><img
-                            src="{{ url_for('static', filename='icons/main_icon/location_icon.png') }}"
-                            alt="Shopping"></span>
-                        Релокация</a></li>
-                    <li><a href="#"><span class="icon"><img
-                            src="{{ url_for('static', filename='icons/main_icon/yacht_icon.png') }}"
-                            alt="Travel"></span>
-                        Яхты</a>
-                    </li>
-                </ul>
+            <div class="col-lg-12">
+                <form id="search-form" name="gs" method="post" role="search" action="#">
+                    <div class="row">
+                        <div class="col-lg-3 align-self-center">
+                            <fieldset>
+                                <select name="area" class="form-select" aria-label="Area" id="chooseCategory"
+                                        onchange="this.form.click()">
+                                    <option selected>Все категории</option>
+                                    <option value="New Village">Транспорт</option>
+                                    <option value="Old Town">Авиа</option>
+                                    <option value="Modern City">Отели</option>
+                                </select>
+                            </fieldset>
+                        </div>
+                        <div class="col-lg-3 align-self-center">
+                            <fieldset>
+                                <select name="area" class="form-select" aria-label="Area" id="chooseCategory"
+                                        onchange="this.form.click()">
+                                    <option selected>Все регионы</option>
+                                    <option value="New Village">Астана</option>
+                                    <option value="Old Town">Алматы</option>
+                                    <option value="Modern City">Актау</option>
+                                </select>
+                            </fieldset>
+                        </div>
+                        <div class="col-lg-3 align-self-center">
+                            <fieldset>
+                                <select name="price" class="form-select" aria-label="Default select example"
+                                        id="chooseCategory" onchange="this.form.click()">
+                                    <option selected>Цена</option>
+                                    <option value="$100 - $250">10000 - 25000</option>
+                                    <option value="$250 - $500">25000 - 50000</option>
+                                    <option value="$100 - $250">50000 - 125000</option>
+                                    <option value="$250 - $500">125000 - 250000</option>
+                                    <option value="$500 - $1000">250000 - 500000</option>
+                                    <option value="$1000+">500000 и более</option>
+                                </select>
+                            </fieldset>
+                        </div>
+                        <div class="col-lg-3">
+                            <fieldset>
+                                <button class="main-button"><i class="fa fa-search"></i> Найти варианты</button>
+                            </fieldset>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-lg-10 offset-lg-1">
+            <ul class="categories">
+                <li><a href="category.html"><span class="icon"><img
+                        src="{{ url_for('static', filename='icons/main_icon/hotel_icon.png') }}"
+                        alt="Home"></span> Отели</a></li>
+                <li><a href="listing.html"><span class="icon"><img
+                        src="{{ url_for('static', filename='icons/main_icon/plane_icon.png') }}"
+                        alt="Food"></span> Авиация</a></li>
+                <li><a href="#"><span class="icon"><img
+                        src="{{ url_for('static', filename='icons/main_icon/car_icon.png') }}"
+                        alt="Vehicle"></span>
+                    Автотранспорт</a></li>
+                <li><a href="#"><span class="icon"><img
+                        src="{{ url_for('static', filename='icons/main_icon/location_icon.png') }}"
+                        alt="Shopping"></span>
+                    Релокация</a></li>
+                <li><a href="#"><span class="icon"><img
+                        src="{{ url_for('static', filename='icons/main_icon/yacht_icon.png') }}"
+                        alt="Travel"></span>
+                    Яхты</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<div id="services"></div>
+
+<div class="wrapper">
+    <div class="row justify-content-center text-center">
+        <div class="col-lg-8">
+            <h6 class="d-inline-block bg-light text-primary text-uppercase py-1 px-2">О нас</h6>
+            <h1 class="mb-5">Наши услуги</h1>
+        </div>
+    </div>
+    <div class="columns">
+        <div class="column" ontouchstart="this.classList.toggle('hover');">
+            <div class="service-container">
+                <div class="front" style="background-image: url(../static/img/main_page/cars.jpg)">
+                    <div class="inner">
+                        <p>Авто</p>
+                        <span>Транспорт</span>
+                    </div>
+                </div>
+                <div class="back">
+                    <div class="inner">
+                        <p>Любой вид транспорта</p>
+                        <div class="main-white-button"><a href="/services/3"><i
+                                class="fa fa-eye"></i>Узнайте больше</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column" ontouchstart="this.classList.toggle('hover');">
+            <div class="service-container">
+                <div class="front" style="background-image: url(../static/img/main_page/hotel.jpg)">
+                    <div class="inner">
+                        <p>Отели</p>
+                        <span>Проживание</span>
+                    </div>
+                </div>
+                <div class="back">
+                    <div class="inner">
+                        <p>Лучшие отели и гостиницы</p>
+                        <div class="main-white-button"><a href="/services/1"><i
+                                class="fa fa-eye"></i>Узнайте больше</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column" ontouchstart="this.classList.toggle('hover');">
+            <div class="service-container">
+                <div class="front" style="background-image: url(../static/img/main_page/plane.jpg)">
+                    <div class="inner">
+                        <p>Авиа</p>
+                        <span>Перелёты</span>
+                    </div>
+                </div>
+                <div class="back">
+                    <div class="inner">
+                        <p>Перелёты из любых точек нашей планеты</p>
+
+                        <div class="main-white-button"><a href="/services/2"><i
+                                class="fa fa-eye"></i>Узнайте больше</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column" ontouchstart="this.classList.toggle('hover');">
+            <div class="service-container">
+                <div class="front" style="background-image: url(../static/img/main_page/yacht.jpg)">
+                    <div class="inner">
+                        <p>Яхты</p>
+                        <span>Путешествие</span>
+                    </div>
+                </div>
+                <div class="back">
+                    <div class="inner">
+                        <p>Путешествие по бескрайним океанам</p>
+
+                        <div class="main-white-button"><a href="/services/4"><i
+                                class="fa fa-eye"></i>Узнайте больше</a></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+</div>
 
 
-    <div id="services"></div>
-
-    <div class="wrapper">
+<div class="popular-categories">
+    <div class="container">
         <div class="row justify-content-center text-center">
             <div class="col-lg-8">
-                <h6 class="d-inline-block bg-light text-primary text-uppercase py-1 px-2">О нас</h6>
-                <h1 class="mb-5">Наши услуги</h1>
+                <h1 class="mb-5">Коротко о главном</h1>
             </div>
         </div>
-        <div class="columns">
-            <div class="column" ontouchstart="this.classList.toggle('hover');">
-                <div class="service-container">
-                    <div class="front" style="background-image: url(../static/img/main_page/cars.jpg)">
-                        <div class="inner">
-                            <p>Авто</p>
-                            <span>Транспорт</span>
-                        </div>
-                    </div>
-                    <div class="back">
-                        <div class="inner">
-                            <p>Любой вид транспорта</p>
-                            <div class="main-white-button"><a href="/services/3"><i
-                                    class="fa fa-eye"></i>Узнайте больше</a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="column" ontouchstart="this.classList.toggle('hover');">
-                <div class="service-container">
-                    <div class="front" style="background-image: url(../static/img/main_page/hotel.jpg)">
-                        <div class="inner">
-                            <p>Отели</p>
-                            <span>Проживание</span>
-                        </div>
-                    </div>
-                    <div class="back">
-                        <div class="inner">
-                            <p>Лучшие отели и гостиницы</p>
-                            <div class="main-white-button"><a href="/services/1"><i
-                                    class="fa fa-eye"></i>Узнайте больше</a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="column" ontouchstart="this.classList.toggle('hover');">
-                <div class="service-container">
-                    <div class="front" style="background-image: url(../static/img/main_page/plane.jpg)">
-                        <div class="inner">
-                            <p>Авиа</p>
-                            <span>Перелёты</span>
-                        </div>
-                    </div>
-                    <div class="back">
-                        <div class="inner">
-                            <p>Перелёты из любых точек нашей планеты</p>
-
-                            <div class="main-white-button"><a href="/services/2"><i
-                                    class="fa fa-eye"></i>Узнайте больше</a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="column" ontouchstart="this.classList.toggle('hover');">
-                <div class="service-container">
-                    <div class="front" style="background-image: url(../static/img/main_page/yacht.jpg)">
-                        <div class="inner">
-                            <p>Яхты</p>
-                            <span>Путешествие</span>
-                        </div>
-                    </div>
-                    <div class="back">
-                        <div class="inner">
-                            <p>Путешествие по бескрайним океанам</p>
-
-                            <div class="main-white-button"><a href="/services/4"><i
-                                    class="fa fa-eye"></i>Узнайте больше</a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="popular-categories">
-        <div class="container">
-            <div class="row justify-content-center text-center">
-                <div class="col-lg-8">
-                    <h1 class="mb-5">Коротко о главном</h1>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="naccs">
-                        <div class="grid">
-                            <div class="row">
-                                <div class="col-lg-3">
-                                    <div class="menu">
-                                        <div class="first-thumb active">
-                                            <div class="thumb">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="naccs">
+                    <div class="grid">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <div class="menu">
+                                    <div class="first-thumb active">
+                                        <div class="thumb">
                                             <span class="icon"><img
                                                     src="{{ url_for('static', filename='icons/main_icon/price_icon.png') }}"
                                                     alt=""></span>
-                                                Тарифы
-                                            </div>
+                                            Тарифы
                                         </div>
-                                        <div>
-                                            <div class="thumb">
+                                    </div>
+                                    <div>
+                                        <div class="thumb">
                                             <span class="icon"><img
                                                     src="{{ url_for('static', filename='icons/main_icon/security_icon.png') }}"
                                                     alt=""></span>
-                                                Безопасность
-                                            </div>
+                                            Безопасность
                                         </div>
-                                        <div>
-                                            <div class="thumb">
+                                    </div>
+                                    <div>
+                                        <div class="thumb">
                                             <span class="icon"><img
                                                     src="{{ url_for('static', filename='icons/main_icon/partners_icon.png') }}"
                                                     alt=""></span>
-                                                Партнеры
-                                            </div>
+                                            Партнеры
                                         </div>
-                                        <div>
-                                            <div class="thumb">
+                                    </div>
+                                    <div>
+                                        <div class="thumb">
                                             <span class="icon"><img
                                                     src="{{ url_for('static', filename='icons/main_icon/relation_icon.png') }}"
                                                     alt=""></span>
-                                                Взаимосвязь
-                                            </div>
+                                            Взаимосвязь
                                         </div>
-                                        <div class="last-thumb">
-                                            <div class="thumb">
+                                    </div>
+                                    <div class="last-thumb">
+                                        <div class="thumb">
                                             <span class="icon"><img
                                                     src="{{ url_for('static', filename='icons/main_icon/automation_icon.png') }}"
                                                     alt=""></span>
-                                                Автоматизаци
-                                            </div>
+                                            Автоматизаци
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-9 align-self-center">
-                                    <ul class="nacc">
-                                        <li class="active">
-                                            <div>
-                                                <div class="thumb">
-                                                    <div class="row">
-                                                        <div class="col-lg-5 align-self-center">
-                                                            <div class="left-text">
-                                                                <h4>Корпоративные тарифы</h4>
-                                                                <p>Самые привлекательные цены на рынке</p>
-                                                                <p>Мы получаем услуги по корпоративным ценам и
-                                                                    предоставляем
-                                                                    их вам</p>
-                                                                <div class="main-white-button"><a href="/contacts"><i
-                                                                        class="fa fa-eye"></i> Связаться с нами</a>
-                                                                </div>
+                            </div>
+                            <div class="col-lg-9 align-self-center">
+                                <ul class="nacc">
+                                    <li class="active">
+                                        <div>
+                                            <div class="thumb">
+                                                <div class="row">
+                                                    <div class="col-lg-5 align-self-center">
+                                                        <div class="left-text">
+                                                            <h4>Корпоративные тарифы</h4>
+                                                            <p>Самые привлекательные цены на рынке</p>
+                                                            <p>Мы получаем услуги по корпоративным ценам и
+                                                                предоставляем
+                                                                их вам</p>
+                                                            <div class="main-white-button"><a href="/contacts"><i
+                                                                    class="fa fa-eye"></i> Связаться с нами</a>
                                                             </div>
                                                         </div>
-                                                        <div class="col-lg-7 align-self-center">
-                                                            <div class="right-image">
-                                                                <img src="{{ url_for('static', filename='img/main_page/tabs-image-01.jpg') }}"
-                                                                     alt="">
-                                                            </div>
+                                                    </div>
+                                                    <div class="col-lg-7 align-self-center">
+                                                        <div class="right-image">
+                                                            <img src="{{ url_for('static', filename='img/main_page/tabs-image-01.jpg') }}"
+                                                                 alt="">
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </li>
-                                        <li>
-                                            <div>
-                                                <div class="thumb">
-                                                    <div class="row">
-                                                        <div class="col-lg-5 align-self-center">
-                                                            <div class="left-text">
-                                                                <h4>Конфиденциальность и безопасность</h4>
-                                                                <p>Важнейшим элементом нашей работы является сохранение
-                                                                    конфиденциальности между нами и нашими клиентами</p>
-                                                                <div class="main-white-button"><a
-                                                                        href="/contacts"><i
-                                                                        class="fa fa-eye"></i> Связаться с нами</a>
-                                                                </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div>
+                                            <div class="thumb">
+                                                <div class="row">
+                                                    <div class="col-lg-5 align-self-center">
+                                                        <div class="left-text">
+                                                            <h4>Конфиденциальность и безопасность</h4>
+                                                            <p>Важнейшим элементом нашей работы является сохранение
+                                                                конфиденциальности между нами и нашими клиентами</p>
+                                                            <div class="main-white-button"><a
+                                                                    href="/contacts"><i
+                                                                    class="fa fa-eye"></i> Связаться с нами</a>
                                                             </div>
                                                         </div>
-                                                        <div class="col-lg-7 align-self-center">
-                                                            <div class="right-image">
-                                                                <img src="{{ url_for('static', filename='img/main_page/pexels-photomix-company-226746.jpg') }}"
-                                                                     alt="Traveling Beach">
-                                                            </div>
+                                                    </div>
+                                                    <div class="col-lg-7 align-self-center">
+                                                        <div class="right-image">
+                                                            <img src="{{ url_for('static', filename='img/main_page/pexels-photomix-company-226746.jpg') }}"
+                                                                 alt="Traveling Beach">
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </li>
-                                        <li>
-                                            <div>
-                                                <div class="thumb">
-                                                    <div class="row">
-                                                        <div class="col-lg-5 align-self-center">
-                                                            <div class="left-text">
-                                                                <h4>Большая база партнеров</h4>
-                                                                <p>У нас партнеры по всему Казахстану и даже за его
-                                                                    пределами, мы предоставляем любые виды услуг,
-                                                                    благодаря
-                                                                    обширной базе партнеров</p>
-                                                                <div class="main-white-button"><a href="/contacts"><i
-                                                                        class="fa fa-eye"></i> Связаться с нами</a>
-                                                                </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div>
+                                            <div class="thumb">
+                                                <div class="row">
+                                                    <div class="col-lg-5 align-self-center">
+                                                        <div class="left-text">
+                                                            <h4>Большая база партнеров</h4>
+                                                            <p>У нас партнеры по всему Казахстану и даже за его
+                                                                пределами, мы предоставляем любые виды услуг,
+                                                                благодаря
+                                                                обширной базе партнеров</p>
+                                                            <div class="main-white-button"><a href="/contacts"><i
+                                                                    class="fa fa-eye"></i> Связаться с нами</a>
                                                             </div>
                                                         </div>
-                                                        <div class="col-lg-7 align-self-center">
-                                                            <div class="right-image">
-                                                                <img src="{{ url_for('static', filename='img/main_page/pexels-the-lazy-artist-gallery-1321943.jpg') }}"
-                                                                     alt="Foods on the table">
-                                                            </div>
+                                                    </div>
+                                                    <div class="col-lg-7 align-self-center">
+                                                        <div class="right-image">
+                                                            <img src="{{ url_for('static', filename='img/main_page/pexels-the-lazy-artist-gallery-1321943.jpg') }}"
+                                                                 alt="Foods on the table">
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </li>
-                                        <li>
-                                            <div>
-                                                <div class="thumb">
-                                                    <div class="row">
-                                                        <div class="col-lg-5 align-self-center">
-                                                            <div class="left-text">
-                                                                <h4>Системные процессы:</h4>
-                                                                <p>Благодаря современным технологиям процесс подачи
-                                                                    заявления на заказ теперь гораздо быстрее
-                                                                </p>
-                                                                <p>
-                                                                    Каждый сотрудник нашей компании является знатоком
-                                                                    своего
-                                                                    дела и готов проявить максимум своих способностей
-                                                                    ради
-                                                                    того, чтобы помочь вам</p>
-                                                                <div class="main-white-button"><a href="/contacts"><i
-                                                                        class="fa fa-eye"></i> Связаться с нами</a>
-                                                                </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div>
+                                            <div class="thumb">
+                                                <div class="row">
+                                                    <div class="col-lg-5 align-self-center">
+                                                        <div class="left-text">
+                                                            <h4>Системные процессы:</h4>
+                                                            <p>Благодаря современным технологиям процесс подачи
+                                                                заявления на заказ теперь гораздо быстрее
+                                                            </p>
+                                                            <p>
+                                                                Каждый сотрудник нашей компании является знатоком
+                                                                своего
+                                                                дела и готов проявить максимум своих способностей
+                                                                ради
+                                                                того, чтобы помочь вам</p>
+                                                            <div class="main-white-button"><a href="/contacts"><i
+                                                                    class="fa fa-eye"></i> Связаться с нами</a>
                                                             </div>
                                                         </div>
-                                                        <div class="col-lg-7 align-self-center">
-                                                            <div class="right-image">
-                                                                <img src="{{ url_for('static', filename='img/main_page/pexels-cottonbro-studio-6636098.jpg') }}"
-                                                                     alt="cars in the city">
-                                                            </div>
+                                                    </div>
+                                                    <div class="col-lg-7 align-self-center">
+                                                        <div class="right-image">
+                                                            <img src="{{ url_for('static', filename='img/main_page/pexels-cottonbro-studio-6636098.jpg') }}"
+                                                                 alt="cars in the city">
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </li>
-                                        <li>
-                                            <div>
-                                                <div class="thumb">
-                                                    <div class="row">
-                                                        <div class="col-lg-5 align-self-center">
-                                                            <div class="left-text">
-                                                                <h4>Один договор на все услуги</h4>
-                                                                <p>Заключив договор однажды вам больше не потребуется
-                                                                    заключать еще один для новых услуг</p>
-                                                                <div class="main-white-button"><a href="/contacts"><i
-                                                                        class="fa fa-eye"></i> Связаться с нами</a>
-                                                                </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div>
+                                            <div class="thumb">
+                                                <div class="row">
+                                                    <div class="col-lg-5 align-self-center">
+                                                        <div class="left-text">
+                                                            <h4>Один договор на все услуги</h4>
+                                                            <p>Заключив договор однажды вам больше не потребуется
+                                                                заключать еще один для новых услуг</p>
+                                                            <div class="main-white-button"><a href="/contacts"><i
+                                                                    class="fa fa-eye"></i> Связаться с нами</a>
                                                             </div>
                                                         </div>
-                                                        <div class="col-lg-7 align-self-center">
-                                                            <div class="right-image">
-                                                                <img src="{{ url_for('static', filename='img/main_page/pexels-picjumbocom-196644.jpg') }}"
-                                                                     alt="Shopping Girl">
-                                                            </div>
+                                                    </div>
+                                                    <div class="col-lg-7 align-self-center">
+                                                        <div class="right-image">
+                                                            <img src="{{ url_for('static', filename='img/main_page/pexels-picjumbocom-196644.jpg') }}"
+                                                                 alt="Shopping Girl">
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </li>
-                                    </ul>
-                                </div>
+                                        </div>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -374,67 +373,55 @@
             </div>
         </div>
     </div>
+</div>
 
 
-    <!-- Team Start -->
-    <div class="container-fluid py-5">
-        <div class="container pt-5">
-            <div class="row justify-content-center text-center">
-                <div class="col-lg-8">
-                    <h6 class="d-inline-block bg-light text-primary text-uppercase py-1 px-2">Основатели</h6>
+<!-- Team Start -->
+<div class="wrapper">
+    <div class="row justify-content-center text-center">
+        <div class="col-lg-8">
+            <h6 class="d-inline-block bg-light text-primary text-uppercase py-1 px-2">Основатели</h6>
+            <h1 class="mb-5"> Основатели группы компаний "Consierge Service"</h1>
+        </div>
+    </div>
+    <div class="columns">
+        <div class="column" ontouchstart="this.classList.toggle('hover');">
+            <div class="service-container">
+                <div class="card card0 founder">
+                    <div class="border">
+                      <h2>Al Pacino</h2>
+                      <div class="icons">
+                        <i class="fa fa-codepen" aria-hidden="true"></i>
+                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                        <i class="fa fa-dribbble" aria-hidden="true"></i>
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                      </div>
+                    </div>
+              </div>
 
-                    <h1 class="mb-5">Основатели группы компаний "Concierge Service"</h1>
-                </div>
             </div>
-            <div class="row justify-content-center text-center">
-                <div class="col-lg-3 col-md-6">
-                    <div class="team position-relative overflow-hidden mb-5">
-                        <img class="img-fluid" src="{{ url_for('static', filename='img/main_page/founder.jpg') }}"
-                             alt="">
-                        <div class="position-relative text-center">
-                            <div class="team-text bg-primary text-white">
-                                <h5 class="text-white text-uppercase">Timur Mauleshov</h5>
-                                <p class="m-0">Founder</p>
-                            </div>
-                            <div class="team-social bg-dark text-center">
-                                <a class="btn btn-outline-primary btn-square mr-2" href="#"><i
-                                        class="fa fa-twitter"></i></a>
-                                <a class="btn btn-outline-primary btn-square mr-2" href="#"><i
-                                        class="fa fa-facebook   "></i></a>
-                                <a class="btn btn-outline-primary btn-square mr-2" href="#"><i
-                                        class="fa fa-linkedin"></i></a>
-                                <a class="btn btn-outline-primary btn-square" href="#"><i
-                                        class="fa fa-instagram"></i></a>
-                            </div>
-                        </div>
+        </div>
+        <div class="column" ontouchstart="this.classList.toggle('hover');">
+            <div class="service-container">
+                <div class="card card0 cofounder">
+                    <div class="border">
+                      <h2>Al Pacino</h2>
+                      <div class="icons">
+                        <i class="fa fa-codepen" aria-hidden="true"></i>
+                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                        <i class="fa fa-dribbble" aria-hidden="true"></i>
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                      </div>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="team position-relative overflow-hidden mb-5">
-                        <img class="img-fluid" src="{{ url_for('static', filename='img/main_page/co-founder.jpg') }}"
-                             alt="">
-                        <div class="position-relative text-center">
-                            <div class="team-text bg-primary text-white">
-                                <h5 class="text-white text-uppercase">Adlet Kamatayev</h5>
-                                <p class="m-0">CO-Founder</p>
-                            </div>
-                            <div class="team-social bg-dark text-center">
-                                <a class="btn btn-outline-primary btn-square mr-2" href="#"><i
-                                        class="fa fa-twitter"></i></a>
-                                <a class="btn btn-outline-primary btn-square mr-2" href="#"><i
-                                        class="fa fa-facebook"></i></a>
-                                <a class="btn btn-outline-primary btn-square mr-2" href="#"><i
-                                        class="fa fa-linkedin"></i></a>
-                                <a class="btn btn-outline-primary btn-square" href="#"><i
-                                        class="fa fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+              </div>
             </div>
         </div>
     </div>
-    <!-- Team End -->
+</div>
+
+<!-- Team End -->
 
 
 {% endblock %}
